@@ -1,7 +1,7 @@
 extends Area2D
 
 export(NodePath) var node_A
-var node
+var node:Node2D
 var can=false
 
 func _ready():
@@ -9,7 +9,11 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Ok") and can:
+		if node.lamp.enabled:
+			node.light_off()
+		else:
 			node.light_on()
+			
 
 func _on_interupitor_body_entered(body):
 	if body.is_in_group("player"):
