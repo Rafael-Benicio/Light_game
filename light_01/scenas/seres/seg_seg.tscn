@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://script/Seg_seg.gd" type="Script" id=1]
 [ext_resource path="res://imgesFonts/seg_seg.png" type="Texture" id=2]
@@ -185,6 +185,18 @@ tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("hurt_Box/CollisionShape2D:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -544,8 +556,32 @@ tracks/28/keys = {
 "update": 0,
 "values": [ Vector2( -190, -25 ) ]
 }
+tracks/29/type = "value"
+tracks/29/path = NodePath("hurt_Box/CollisionShape2D:disabled")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("hurt_Box/CollisionShape2D:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -78, -8 ) ]
+}
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=4]
 resource_name = "walk_left_speed"
 length = 0.6
 loop = true
@@ -897,9 +933,32 @@ tracks/28/keys = {
 "update": 0,
 "values": [ Vector2( -190, -25 ) ]
 }
+tracks/29/type = "value"
+tracks/29/path = NodePath("hurt_Box/CollisionShape2D:disabled")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("hurt_Box/CollisionShape2D:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -78, -8 ) ]
+}
 
-[sub_resource type="Animation" id=4]
-resource_name = "walk_right"
+[sub_resource type="Animation" id=5]
 length = 1.2
 loop = true
 step = 0.01
@@ -1251,8 +1310,32 @@ tracks/28/keys = {
 "update": 0,
 "values": [ Vector2( 144, -25 ) ]
 }
+tracks/29/type = "value"
+tracks/29/path = NodePath("hurt_Box/CollisionShape2D:position")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 40, -8 ) ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("hurt_Box/CollisionShape2D:disabled")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=6]
 resource_name = "walk_right_speed"
 length = 0.6
 loop = true
@@ -1605,8 +1688,32 @@ tracks/28/keys = {
 "update": 0,
 "values": [ Vector2( 144, -25 ) ]
 }
+tracks/29/type = "value"
+tracks/29/path = NodePath("hurt_Box/CollisionShape2D:disabled")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("hurt_Box/CollisionShape2D:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 40, -8 ) ]
+}
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=7]
 emission_shape = 2
 emission_box_extents = Vector3( 10, 1, 1 )
 flag_disable_z = true
@@ -1619,20 +1726,25 @@ angle_random = 1.0
 scale = 2.5
 scale_random = 1.0
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 60, 2 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 120, 51 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 14.7638, 15.8023 )
 
 [node name="seg_seg" type="KinematicBody2D" groups=[
 "seg_seg",
 ]]
 position = Vector2( -14.0379, -2.64866 )
+z_index = 5
 script = ExtResource( 1 )
 direction = "right"
 
 [node name="s_neck" type="Sprite" parent="."]
+visible = false
 position = Vector2( 6, -4 )
 texture = ExtResource( 2 )
 flip_h = true
@@ -1640,6 +1752,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="s_corpo" type="Sprite" parent="."]
+visible = false
 position = Vector2( -27, -4 )
 texture = ExtResource( 2 )
 flip_h = true
@@ -1647,6 +1760,7 @@ region_enabled = true
 region_rect = Rect2( 64, 0, 80, 48 )
 
 [node name="s_head" type="Sprite" parent="."]
+visible = false
 position = Vector2( 19, -7 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
@@ -1655,6 +1769,7 @@ region_enabled = true
 region_rect = Rect2( 0, 32, 64, 32 )
 
 [node name="s_leg_frent" type="Sprite" parent="."]
+visible = false
 position = Vector2( 0, 7 )
 texture = ExtResource( 2 )
 flip_h = true
@@ -1664,6 +1779,7 @@ region_enabled = true
 region_rect = Rect2( 144, 0, 256, 64 )
 
 [node name="s_leg_back" type="Sprite" parent="."]
+visible = false
 position = Vector2( -30, 7 )
 texture = ExtResource( 2 )
 flip_h = true
@@ -1674,7 +1790,6 @@ region_enabled = true
 region_rect = Rect2( 400, 0, 192, 64 )
 
 [node name="s_leg_state" type="Sprite" parent="."]
-visible = false
 position = Vector2( -20, -10 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
@@ -1684,7 +1799,6 @@ region_enabled = true
 region_rect = Rect2( 592, 16, 96, 48 )
 
 [node name="z" type="Sprite" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -7, -20 )
 rotation = 0.785398
@@ -1702,38 +1816,48 @@ shape = SubResource( 1 )
 [node name="anima" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 2 )
 anims/walk_left = SubResource( 3 )
-anims/walk_left_speed = SubResource( 8 )
-anims/walk_right = SubResource( 4 )
-anims/walk_right_speed = SubResource( 9 )
+anims/walk_left_speed = SubResource( 4 )
+anims/walk_right = SubResource( 5 )
+anims/walk_right_speed = SubResource( 6 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 visible = false
 position = Vector2( -38, 23 )
+emitting = false
 amount = 10
 visibility_rect = Rect2( -8, -1, 16, 2 )
 local_coords = false
-process_material = SubResource( 5 )
+process_material = SubResource( 7 )
 
 [node name="Particles2D2" type="Particles2D" parent="."]
 visible = false
 position = Vector2( -3, 23 )
+emitting = false
 amount = 10
 visibility_rect = Rect2( -8, -1, 16, 2 )
 local_coords = false
-process_material = SubResource( 5 )
+process_material = SubResource( 7 )
 
 [node name="colision_parede" type="Area2D" parent="."]
 
 [node name="coli" type="CollisionShape2D" parent="colision_parede"]
 position = Vector2( -20, 3 )
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 
 [node name="chasing_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chasing_area"]
 modulate = Color( 1, 1, 1, 0.254902 )
 position = Vector2( 144, -25 )
-shape = SubResource( 7 )
+shape = SubResource( 9 )
+disabled = true
+
+[node name="hurt_Box" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_Box"]
+position = Vector2( 40, -8 )
+shape = SubResource( 10 )
+disabled = true
 
 [node name="end_idle" type="Timer" parent="."]
 
@@ -1742,4 +1866,5 @@ shape = SubResource( 7 )
 [connection signal="body_entered" from="colision_parede" to="." method="colision_wall"]
 [connection signal="body_entered" from="chasing_area" to="." method="detect_player"]
 [connection signal="body_exited" from="chasing_area" to="." method="sai_da_area_de_Perseguition"]
+[connection signal="body_entered" from="hurt_Box" to="." method="mata_Player"]
 [connection signal="timeout" from="end_idle" to="." method="end_idle"]

@@ -81,3 +81,8 @@ func detect_player(body):
 func sai_da_area_de_Perseguition(body):
 	if body.is_in_group("player"):
 		boost=false
+
+
+func mata_Player(body):
+	if body.is_in_group('player'):
+		body.Death_Player()
