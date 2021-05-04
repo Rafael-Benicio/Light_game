@@ -117,6 +117,58 @@ tracks/7/keys = {
 }
 
 [sub_resource type="Animation" id=3]
+resource_name = "Next_level"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("player_olhos:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 1, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("player_legs:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("player_clouth:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("particulas:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("player_head:frame")
@@ -191,7 +243,7 @@ tracks/5/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("player_head:frame")
@@ -266,7 +318,7 @@ tracks/5/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("player_head:frame")
@@ -417,9 +469,6 @@ tracks/5/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="OccluderPolygon2D" id=14]
-polygon = PoolVector2Array( 0, -47.75, -8.625, -45.5, -15.375, -37.875, -15.25, -27.875, -11.25, -20.875, -8.125, -17.75, -7.875, -14.375, -8.5, -6, -10, 4.625, 0.125, 7.125, 9.375, 4.375, 8.375, -5.875, 7.625, -13.875, 7.625, -17.5, 10.125, -19.5, 13.125, -23, 15.375, -27.75, 15.375, -36.875, 11.625, -42.875, 6.5, -46.75 )
-
 [sub_resource type="Curve" id=8]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.967105, 0 ), -3.22424, 0.0, 0, 0 ]
 
@@ -464,6 +513,7 @@ scale_curve = SubResource( 12 )
 "player",
 ]]
 z_index = 5
+collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="player_head" type="Sprite" parent="."]
@@ -482,7 +532,7 @@ position = Vector2( 0, 32 )
 texture = ExtResource( 1 )
 hframes = 3
 vframes = 2
-frame = 5
+frame = 2
 region_enabled = true
 region_rect = Rect2( 0, 32, 144, 32 )
 
@@ -504,19 +554,17 @@ region_enabled = true
 region_rect = Rect2( 32, 0, 96, 32 )
 
 [node name="colision_fisica" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0.353561, 15.0002 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Death = SubResource( 2 )
-anims/idle = SubResource( 3 )
-anims/jump_down = SubResource( 4 )
-anims/jump_up = SubResource( 5 )
+anims/Next_level = SubResource( 3 )
+anims/idle = SubResource( 4 )
+anims/jump_down = SubResource( 5 )
+anims/jump_up = SubResource( 6 )
 anims/walk = SubResource( 7 )
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2( 0, 32 )
-occluder = SubResource( 14 )
 
 [node name="particulas" type="Particles2D" parent="."]
 visible = false

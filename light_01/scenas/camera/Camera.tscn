@@ -9,3 +9,14 @@ script = ExtResource( 1 )
 current = true
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 56.0
+margin_bottom = 22.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

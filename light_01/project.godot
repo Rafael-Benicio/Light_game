@@ -11,17 +11,18 @@ config_version=4
 [application]
 
 config/name="game_Done"
-run/main_scene="res://scenas/Main.tscn"
+run/main_scene="res://scenas/Main_scenes/Nivel_1.tscn"
 config/icon="res://icon.png"
 
 [display]
 
-window/size/width=717
-window/size/height=420
-window/size/test_width=717
-window/size/test_height=420
+window/ios/hide_home_indicator=false
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray(  )
 
 [input]
 
@@ -110,10 +111,6 @@ Ok={
 [locale]
 
 locale_filter=[ 0, [  ] ]
-
-[physics]
-
-common/enable_pause_aware_picking=true
 
 [rendering]
 
