@@ -22,20 +22,20 @@ color_ramp = SubResource( 2 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 160, 160.223 )
 
-[node name="StaticBody2D" type="StaticBody2D" groups=[
+[node name="Smook" type="StaticBody2D" groups=[
 "smook",
 ]]
+z_index = 6
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 444, 976 )
+emitting = false
 amount = 100
 lifetime = 2.0
 process_material = SubResource( 3 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 448, 992 )
 shape = SubResource( 4 )

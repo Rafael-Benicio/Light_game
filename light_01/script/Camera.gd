@@ -22,7 +22,7 @@ func _ready():
 #	Pega o nodo que vai ser seguido
 	node=get_node(Element_To_Follow)
 #	Conecta com o sinal "go_To_Init" que é emitido quando o Player morre
-	node.connect("go_To_Init", self,'go_To_Init_Position')
+	var _ok=node.connect("go_To_Init", self,'go_To_Init_Position')
 #	Seta os limites da camera
 	camera.limit_left=Limit_Left
 	camera.limit_bottom=Limit_Botton
@@ -44,5 +44,5 @@ func _physics_process(_delta):
 
 #Camera vai para a posição armazenada na variavel 'ini_position' no node do Player
 func go_To_Init_Position():
-	Tween_node.interpolate_property(self,"position",position,node.ini_position,1,Tween_node.TRANS_LINEAR,Tween.EASE_IN)
-	Tween_node.start()
+	if Tween_node.interpolate_property(self,"position",position,node.ini_position,1,Tween_node.TRANS_LINEAR,Tween_node.EASE_IN,1):
+		var _ok:bool=Tween_node.start()

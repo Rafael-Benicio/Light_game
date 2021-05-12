@@ -12,7 +12,12 @@ config_version=4
 
 config/name="game_Done"
 run/main_scene="res://scenas/Main_scenes/Nivel_1.tscn"
+run/low_processor_mode=true
 config/icon="res://icon.png"
+
+[debug]
+
+settings/fps/force_fps=60
 
 [display]
 
@@ -112,10 +117,22 @@ Ok={
 
 locale_filter=[ 0, [  ] ]
 
+[memory]
+
+limits/message_queue/max_size_kb=5096
+
+[physics]
+
+2d/physics_engine="GodotPhysics"
+
 [rendering]
 
+2d/options/use_nvidia_rect_flicker_workaround=true
 quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
 2d/snapping/use_gpu_pixel_snap=true
+quality/reflections/texture_array_reflections=false
+quality/reflections/high_quality_ggx=false
+2d/options/ninepatch_mode=0
 quality/subsurface_scattering/follow_surface=true
 environment/default_environment="res://default_env.tres"

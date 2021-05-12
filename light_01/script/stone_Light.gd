@@ -1,16 +1,16 @@
 extends StaticBody2D
 
-export(bool) var Light_Variable=false
-export(int) var light_scale=1
-export(float) var max_energi=2
-export(float) var min_energi=0
-export(float,0,20) var Time_Light=1
-export(bool) var Shadow_E=false
+export(bool) var Light_Variable:bool=false
+export(int) var light_scale:int=1
+export(float) var max_energi:float=2
+export(float) var min_energi:float=0
+export(float,0,20) var Time_Light:float=1
+export(bool) var Shadow_E:bool=false
 
-onready var light=$Light2D
+onready var light:Light2D=$Light2D
 
-var upDonw=true
-var speed
+var upDonw:bool=true
+var speed:float
 
 func _ready():
 	light.texture_scale=light_scale
@@ -32,7 +32,6 @@ func _physics_process(_adelta):
 		light.energy-=speed
 		if light.energy < min_energi:
 			upDonw=true
-
 
 
 

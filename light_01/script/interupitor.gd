@@ -1,32 +1,38 @@
 extends Area2D
 
-export(NodePath) var node_A
-var node:Node2D
-var can=false
+export(bool) var emiter:bool=false
+
+onready var light=$Light2D
+
+var can:bool=false
 
 signal interruptor_on
 signal interruptor_off
 
 func _ready():
-	node=get_node(node_A)
+	set_process(false)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Ok") and can:
-		if node.lamp.enabled:
-			node.light_off()
+		if emiter==false:
+			emiter=true
+			light.enabled=false
 			emit_signal("interruptor_on")
-			get_node("Light2D").enabled=true
 		else:
-			get_node("Light2D").enabled=false
-			node.light_on()
+			emiter=false
+			light.enabled=true
 			emit_signal("interruptor_off")
-			
 
 func _on_interupitor_body_entered(body):
 	if body.is_in_group("player"):
 		can=true
+		body.useOK=false
+		set_process(true)
 
 
 func _on_interupitor_body_exited(body):
 	if body.is_in_group("player"):
 		can=false
+		body.useOK=true
+		set_process(false)
+		

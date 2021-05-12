@@ -9,7 +9,9 @@ extents = Vector2( 64, 32 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64, 10 )
 
-[node name="Plataforma_Queda" type="StaticBody2D"]
+[node name="Plataforma_Queda" type="StaticBody2D" groups=[
+"P_queda",
+]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -27,6 +29,9 @@ shape = SubResource( 1 )
 one_shot = true
 
 [node name="Timer2" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="."]
 one_shot = true
 
 [node name="Area" type="Area2D" parent="."]

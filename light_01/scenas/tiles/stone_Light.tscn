@@ -11,6 +11,7 @@ extents = Vector2( 32, 16.2331 )
 extents = Vector2( 31.1111, 2.36911 )
 
 [node name="stone_Light" type="StaticBody2D"]
+z_index = 1
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]

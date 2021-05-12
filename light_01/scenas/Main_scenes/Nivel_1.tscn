@@ -61,13 +61,14 @@ Time_Light = 1.5
 [node name="Door_To_next_Level" parent="Tiles" instance=ExtResource( 4 )]
 position = Vector2( 528, 144 )
 Next_Level = ExtResource( 6 )
-Time = 2
 
 [node name="Camera" parent="." instance=ExtResource( 5 )]
 Element_To_Follow = NodePath("../Seres/player")
+Limit_Left = 0
+Limit_Top = 0
 Limit_Right = 2048
 Limit_Botton = 1152
-Smooth = 10
+Smooth = 5
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.678431, 0.678431, 0.678431, 1 )

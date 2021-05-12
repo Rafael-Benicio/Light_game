@@ -1,123 +1,75 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://imgesFonts/player_animation.png" type="Texture" id=1]
 [ext_resource path="res://script/player.gd" type="Script" id=2]
-[ext_resource path="res://imgesFonts/star.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 11.8914
-height = 37.7635
+radius = 12.0
+height = 6.0004
 
-[sub_resource type="Animation" id=2]
-resource_name = "Death"
+[sub_resource type="CircleShape2D" id=2]
+radius = 4.0393
+
+[sub_resource type="Animation" id=3]
 length = 2.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.001, 1.01 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.4, 0, 0, 1 ), Color( 0.4, 0, 0, 0 ), Color( 0.4, 0, 0, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1, 1.9, 2 ),
+"times": PoolRealArray( 0, 1, 2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "Emit_Signal_To_Init_Position"
 }, {
 "args": [  ],
-"method": "return_to_init_position"
+"method": "to_init_position"
 }, {
 "args": [  ],
 "method": "set_canMove"
 } ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
 tracks/2/type = "value"
-tracks/2/path = NodePath("player_olhos:visible")
+tracks/2/path = NodePath(".:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("player_legs:visible")
+tracks/3/path = NodePath("player_olhos:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("player_clouth:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 1, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("player_body:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 1, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("player_head:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 1, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("particulas:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 1, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Next_level"
+[sub_resource type="Animation" id=4]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("player_olhos:frame")
@@ -168,7 +120,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("player_head:frame")
@@ -230,20 +182,8 @@ tracks/4/keys = {
 "update": 1,
 "values": [ false ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("player_olhos:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 3 ]
-}
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("player_head:frame")
@@ -305,20 +245,8 @@ tracks/4/keys = {
 "update": 1,
 "values": [ false ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("player_olhos:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("player_head:frame")
@@ -380,20 +308,8 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("player_olhos:frame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -409,7 +325,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("player_olhos:frame")
+tracks/1/path = NodePath("player_body:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -418,64 +334,52 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("player_body:frame")
+tracks/2/path = NodePath("player_clouth:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("player_clouth:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 3, 0 ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("player_legs:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/path = NodePath("player_legs:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 7, 5, 3, 1, 7, 5, 3, 1 ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("particulas:emitting")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
+tracks/4/type = "value"
+tracks/4/path = NodePath("particulas:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
 
-[sub_resource type="Curve" id=8]
+[sub_resource type="Curve" id=9]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.967105, 0 ), -3.22424, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=9]
-curve = SubResource( 8 )
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 9 )
 
-[sub_resource type="ParticlesMaterial" id=10]
+[sub_resource type="ParticlesMaterial" id=11]
 emission_shape = 2
 emission_box_extents = Vector3( 5, 3, 1 )
 flag_disable_z = true
@@ -486,28 +390,7 @@ angle = 45.0
 angle_random = 1.0
 scale = 3.0
 scale_random = 0.3
-scale_curve = SubResource( 9 )
-
-[sub_resource type="Curve" id=11]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=12]
-curve = SubResource( 11 )
-
-[sub_resource type="ParticlesMaterial" id=13]
-emission_shape = 1
-emission_sphere_radius = 0.01
-flag_disable_z = true
-direction = Vector3( 0, 0, 0 )
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 100.0
-angular_velocity = 45.0
-angular_velocity_random = 0.5
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 3.0
-scale_curve = SubResource( 12 )
+scale_curve = SubResource( 10 )
 
 [node name="player" type="KinematicBody2D" groups=[
 "player",
@@ -517,6 +400,13 @@ collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="player_head" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="Boll" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, 30 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
@@ -532,7 +422,7 @@ position = Vector2( 0, 32 )
 texture = ExtResource( 1 )
 hframes = 3
 vframes = 2
-frame = 2
+frame = 3
 region_enabled = true
 region_rect = Rect2( 0, 32, 144, 32 )
 
@@ -541,7 +431,7 @@ position = Vector2( -1, 38 )
 texture = ExtResource( 1 )
 hframes = 2
 vframes = 4
-frame = 6
+frame = 7
 region_enabled = true
 region_rect = Rect2( 144, 0, 32, 64 )
 
@@ -549,39 +439,63 @@ region_rect = Rect2( 144, 0, 32, 64 )
 texture = ExtResource( 1 )
 hframes = 3
 vframes = 2
-frame = 3
+frame = 4
 region_enabled = true
 region_rect = Rect2( 32, 0, 96, 32 )
 
 [node name="colision_fisica" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( 0.353561, 15.0002 )
+position = Vector2( 0, 30 )
 shape = SubResource( 1 )
 
+[node name="Cabeca" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0.000325203, 0 )
+shape = SubResource( 1 )
+
+[node name="Hurt" type="Area2D" parent="."]
+position = Vector2( 0, -1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt"]
+position = Vector2( 0.000325203, 25 )
+shape = SubResource( 2 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Death = SubResource( 2 )
-anims/Next_level = SubResource( 3 )
-anims/idle = SubResource( 4 )
-anims/jump_down = SubResource( 5 )
-anims/jump_up = SubResource( 6 )
-anims/walk = SubResource( 7 )
+anims/Death = SubResource( 3 )
+anims/Next_level = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/jump_down = SubResource( 6 )
+anims/jump_up = SubResource( 7 )
+anims/walk = SubResource( 8 )
 
 [node name="particulas" type="Particles2D" parent="."]
 visible = false
 position = Vector2( 0.000325203, 45.9785 )
-emitting = false
 amount = 20
 lifetime = 0.5
 visibility_rect = Rect2( -8, -1, 16, 2 )
 local_coords = false
-process_material = SubResource( 10 )
+process_material = SubResource( 11 )
 
-[node name="Reborn" type="Particles2D" parent="."]
-position = Vector2( 0, 15 )
-emitting = false
-amount = 300
-one_shot = true
-explosiveness = 0.5
-randomness = 1.0
-process_material = SubResource( 13 )
-texture = ExtResource( 3 )
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+margin_right = 1024.0
+margin_bottom = 601.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+margin_left = 8.93378
+margin_top = 552.0
+margin_right = 48.9338
+margin_bottom = 592.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="Hurt" to="." method="hurt"]

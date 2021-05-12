@@ -1,0 +1,242 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scenas/tiles/paredes.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenas/seres/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenas/camera/Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenas/tiles/stone_Light.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenas/tiles/corrente.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenas/tiles/Plataforma_Queda.tscn" type="PackedScene" id=6]
+[ext_resource path="res://script/PathFollow2D.gd" type="Script" id=7]
+[ext_resource path="res://scenas/Features/Smock_block_way.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenas/tiles/Door_To_next_Level.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenas/tiles/interupitor.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenas/Features/Icons_Eyes_Close.tscn" type="PackedScene" id=11]
+[ext_resource path="res://script/Nivel_4.gd" type="Script" id=12]
+[ext_resource path="res://scenas/Features/In_Tangible_Wall.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenas/Main_scenes/Nivel_5.tscn" type="PackedScene" id=14]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 986.602, -1247.91, 0, 0, 0, 0, 1498.18, -1247.11, 0, 0, 0, 0, 985.789, -1246.59, 0, 0, 0, 0, 986.602, -1247.91 )
+}
+
+[node name="Nivel_4" type="Node2D"]
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+player = NodePath("Seres/player")
+tiles = NodePath("Tiles")
+features = NodePath("Features")
+
+[node name="Tiles" type="Node2D" parent="."]
+position = Vector2( 192, 1856 )
+
+[node name="Paredes" parent="Tiles" instance=ExtResource( 1 )]
+tile_data = PoolIntArray( -1900520, 0, 0, -1900519, 0, 0, -1900518, 0, 0, -1900517, 0, 0, -1900516, 0, 0, -1834985, 0, 0, -1834984, 1, 0, -1834983, 1, 0, -1834982, 1, 0, -1834981, 1, 0, -1834980, 1, 0, -1834979, 0, 0, -1769453, 0, 0, -1769452, 0, 0, -1769451, 0, 0, -1769450, 0, 0, -1769449, 0, 0, -1769448, 1, 0, -1769447, 1, 0, -1769446, 1, 0, -1769445, 1, 0, -1769444, 1, 0, -1769443, 0, 0, -1769442, 0, 0, -1769441, 0, 0, -1769440, 0, 0, -1703918, 0, 0, -1703917, 1, 0, -1703916, 1, 0, -1703915, 1, 0, -1703914, 1, 0, -1703913, 1, 0, -1703912, 1, 0, -1703911, 1, 0, -1703910, 1, 0, -1703909, 1, 0, -1703908, 1, 0, -1703907, 1, 0, -1703906, 1, 0, -1703905, 1, 0, -1703904, 1, 0, -1703903, 0, 0, -1703902, 0, 0, -1703901, 0, 0, -1703900, 0, 0, -1703899, 0, 0, -1703898, 0, 0, -1703897, 0, 0, -1703896, 0, 0, -1638382, 0, 0, -1638381, 1, 0, -1638380, 1, 0, -1638379, 1, 0, -1638378, 1, 0, -1638377, 1, 0, -1638376, 1, 0, -1638375, 1, 0, -1638374, 1, 0, -1638373, 1, 0, -1638372, 1, 0, -1638371, 1, 0, -1638370, 1, 0, -1638369, 1, 0, -1638368, 1, 0, -1638367, 1, 0, -1638366, 1, 0, -1638365, 1, 0, -1638364, 1, 0, -1638363, 1, 0, -1638362, 1, 0, -1638361, 1, 0, -1638360, 1, 0, -1638359, 0, 0, -1572846, 0, 0, -1572845, 1, 0, -1572844, 1, 0, -1572843, 1, 0, -1572842, 1, 0, -1572841, 1, 0, -1572840, 1, 0, -1572839, 1, 0, -1572838, 1, 0, -1572837, 1, 0, -1572836, 1, 0, -1572835, 1, 0, -1572834, 1, 0, -1572833, 1, 0, -1572832, 1, 0, -1572831, 1, 0, -1572830, 1, 0, -1572829, 1, 0, -1572828, 1, 0, -1572827, 1, 0, -1572826, 1, 0, -1572825, 1, 0, -1572824, 1, 0, -1572823, 0, 0, -1507310, 0, 0, -1507309, 1, 0, -1507308, 1, 0, -1507307, 0, 0, -1507306, 0, 0, -1507305, 0, 0, -1507304, 0, 0, -1507303, 0, 0, -1507302, 0, 0, -1507301, 0, 0, -1507300, 0, 0, -1507299, 0, 0, -1507298, 0, 0, -1507297, 0, 0, -1507296, 0, 0, -1507295, 0, 0, -1507294, 0, 0, -1507293, 0, 0, -1507292, 0, 0, -1507291, 0, 0, -1507290, 0, 0, -1507289, 1, 0, -1507288, 1, 0, -1507287, 0, 0, -1441774, 0, 0, -1441773, 1, 0, -1441772, 1, 0, -1441771, 0, 0, -1441754, 0, 0, -1441753, 1, 0, -1441752, 1, 0, -1441751, 0, 0, -1376239, 0, 0, -1376238, 0, 0, -1376237, 1, 0, -1376236, 0, 0, -1376235, 0, 0, -1376218, 0, 0, -1376217, 1, 0, -1376216, 1, 0, -1376215, 0, 0, -1310704, 0, 0, -1310703, 1, 0, -1310702, 1, 0, -1310701, 1, 0, -1310700, 1, 0, -1310699, 1, 0, -1310698, 0, 0, -1310682, 0, 0, -1310681, 1, 0, -1310680, 1, 0, -1310679, 0, 0, -1245168, 0, 0, -1245167, 1, 0, -1245166, 1, 0, -1245165, 1, 0, -1245164, 1, 0, -1245163, 1, 0, -1245162, 0, 0, -1245146, 0, 0, -1245145, 1, 0, -1245144, 1, 0, -1245143, 0, 0, -1179631, 0, 0, -1179630, 1, 0, -1179629, 1, 0, -1179628, 1, 0, -1179627, 0, 0, -1179610, 0, 0, -1179609, 1, 0, -1179608, 1, 0, -1179607, 0, 0, -1114095, 0, 0, -1114094, 1, 0, -1114093, 1, 0, -1114092, 1, 0, -1114091, 0, 0, -1114074, 0, 0, -1114073, 1, 0, -1114072, 1, 0, -1114071, 0, 0, -1048559, 0, 0, -1048558, 1, 0, -1048557, 1, 0, -1048556, 1, 0, -1048555, 0, 0, -1048538, 0, 0, -1048537, 1, 0, -1048536, 1, 0, -1048535, 0, 0, -983023, 0, 0, -983022, 1, 0, -983021, 1, 0, -983020, 1, 0, -983019, 0, 0, -983002, 0, 0, -983001, 1, 0, -983000, 1, 0, -982999, 0, 0, -917488, 0, 0, -917487, 1, 0, -917486, 1, 0, -917485, 1, 0, -917484, 1, 0, -917483, 0, 0, -917466, 0, 0, -917465, 1, 0, -917464, 1, 0, -917463, 0, 0, -851952, 0, 0, -851951, 1, 0, -851950, 1, 0, -851949, 1, 0, -851948, 1, 0, -851947, 0, 0, -851930, 0, 0, -851929, 1, 0, -851928, 1, 0, -851927, 0, 0, -786415, 0, 0, -786414, 0, 0, -786413, 1, 0, -786412, 1, 0, -786411, 1, 0, -786410, 0, 0, -786394, 0, 0, -786393, 1, 0, -786392, 1, 0, -786391, 0, 0, -720878, 0, 0, -720877, 1, 0, -720876, 1, 0, -720875, 1, 0, -720874, 1, 0, -720873, 0, 0, -720858, 0, 0, -720857, 1, 0, -720856, 1, 0, -720855, 0, 0, -655343, 0, 0, -655342, 1, 0, -655341, 1, 0, -655340, 1, 0, -655339, 1, 0, -655338, 1, 0, -655337, 0, 0, -655322, 0, 0, -655321, 1, 0, -655320, 1, 0, -655319, 0, 0, -589807, 0, 0, -589806, 1, 0, -589805, 1, 0, -589804, 1, 0, -589803, 0, 0, -589802, 0, 0, -589786, 0, 0, -589785, 1, 0, -589784, 1, 0, -589783, 0, 0, -524272, 0, 0, -524271, 1, 0, -524270, 1, 0, -524269, 1, 0, -524268, 1, 0, -524267, 0, 0, -524250, 0, 0, -524249, 1, 0, -524248, 1, 0, -524247, 0, 0, -458736, 0, 0, -458735, 1, 0, -458734, 1, 0, -458733, 1, 0, -458732, 1, 0, -458731, 1, 0, -458730, 0, 0, -458714, 0, 0, -458713, 1, 0, -458712, 1, 0, -458711, 0, 0, -393199, 0, 0, -393198, 1, 0, -393197, 1, 0, -393196, 1, 0, -393195, 1, 0, -393194, 0, 0, -393178, 0, 0, -393177, 1, 0, -393176, 1, 0, -393175, 0, 0, -327663, 0, 0, -327662, 1, 0, -327661, 1, 0, -327660, 1, 0, -327659, 1, 0, -327658, 1, 0, -327657, 0, 0, -327642, 0, 0, -327641, 1, 0, -327640, 1, 0, -327639, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262127, 0, 0, -262126, 1, 0, -262125, 1, 0, -262124, 1, 0, -262123, 1, 0, -262122, 1, 0, -262121, 0, 0, -262106, 0, 0, -262105, 1, 0, -262104, 1, 0, -262103, 0, 0, -196602, 0, 0, -196601, 1, 0, -196600, 1, 0, -196599, 1, 0, -196598, 1, 0, -196597, 1, 0, -196596, 1, 0, -196595, 1, 0, -196594, 1, 0, -196593, 0, 0, -196591, 0, 0, -196590, 1, 0, -196589, 1, 0, -196588, 1, 0, -196587, 1, 0, -196586, 0, 0, -196570, 0, 0, -196569, 1, 0, -196568, 1, 0, -196567, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 1, 0, -131065, 1, 0, -131064, 1, 0, -131063, 1, 0, -131062, 1, 0, -131061, 1, 0, -131060, 1, 0, -131059, 1, 0, -131058, 1, 0, -131057, 1, 0, -131056, 0, 0, -131055, 0, 0, -131054, 0, 0, -131053, 1, 0, -131052, 1, 0, -131051, 1, 0, -131050, 0, 0, -131049, 0, 0, -131048, 0, 0, -131047, 0, 0, -131046, 0, 0, -131045, 0, 0, -131039, 0, 0, -131034, 0, 0, -131033, 1, 0, -131032, 1, 0, -131031, 0, 0, -65536, 0, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, -65517, 1, 0, -65516, 1, 0, -65515, 1, 0, -65514, 0, 0, -65513, 1, 0, -65512, 1, 0, -65511, 1, 0, -65510, 1, 0, -65509, 1, 0, -65508, 0, 0, -65504, 0, 0, -65503, 1, 0, -65502, 0, 0, -65498, 0, 0, -65497, 1, 0, -65496, 1, 0, -65495, 0, 0, 0, 0, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 0, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 0, 0, 31, 0, 0, 32, 1, 0, 33, 1, 0, 34, 1, 0, 35, 0, 0, 38, 0, 0, 39, 1, 0, 40, 1, 0, 41, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 65555, 1, 0, 65556, 0, 0, 65557, 0, 0, 65558, 0, 0, 65559, 1, 0, 65560, 1, 0, 65561, 1, 0, 65562, 1, 0, 65563, 1, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 65567, 0, 0, 65568, 1, 0, 65569, 1, 0, 65570, 1, 0, 65571, 0, 0, 65572, 0, 0, 65573, 0, 0, 65574, 0, 0, 65575, 1, 0, 65576, 1, 0, 65577, 0, 0, 196605, 0, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 0, 0, 131083, 0, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 131091, 1, 0, 131092, 1, 0, 131093, 1, 0, 131094, 1, 0, 131095, 1, 0, 131096, 1, 0, 131097, 1, 0, 131098, 1, 0, 131099, 1, 0, 131100, 1, 0, 131101, 1, 0, 131102, 1, 0, 131103, 1, 0, 131104, 1, 0, 131105, 1, 0, 131106, 1, 0, 131107, 1, 0, 131108, 1, 0, 131109, 1, 0, 131110, 1, 0, 131111, 1, 0, 131112, 1, 0, 131113, 0, 0, 262141, 0, 0, 262142, 1, 0, 262143, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 196625, 1, 0, 196626, 1, 0, 196627, 1, 0, 196628, 1, 0, 196629, 1, 0, 196630, 1, 0, 196631, 1, 0, 196632, 1, 0, 196633, 1, 0, 196634, 1, 0, 196635, 1, 0, 196636, 1, 0, 196637, 1, 0, 196638, 1, 0, 196639, 1, 0, 196640, 1, 0, 196641, 1, 0, 196642, 1, 0, 196643, 1, 0, 196644, 1, 0, 196645, 1, 0, 196646, 1, 0, 196647, 1, 0, 196648, 1, 0, 196649, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 262168, 0, 0, 262169, 0, 0, 262170, 0, 0, 262171, 0, 0, 262172, 0, 0, 262173, 0, 0, 262174, 0, 0, 262175, 0, 0, 262176, 0, 0, 262177, 0, 0, 262178, 0, 0, 262179, 0, 0, 262180, 0, 0, 262181, 0, 0, 262182, 0, 0, 262183, 0, 0, 262184, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0 )
+
+[node name="stone_Light" parent="Tiles" instance=ExtResource( 4 )]
+position = Vector2( 544, 288 )
+Light_Variable = true
+light_scale = 2
+max_energi = 1.0
+Time_Light = 0.5
+
+[node name="stone_Light2" parent="Tiles" instance=ExtResource( 4 )]
+position = Vector2( 608, 288 )
+Light_Variable = true
+
+[node name="stone_Light3" parent="Tiles" instance=ExtResource( 4 )]
+position = Vector2( 672, 288 )
+Light_Variable = true
+Time_Light = 1.5
+
+[node name="stone_Light4" parent="Tiles" instance=ExtResource( 4 )]
+position = Vector2( 736, 288 )
+Light_Variable = true
+Time_Light = 1.5
+
+[node name="stone_Light5" parent="Tiles" instance=ExtResource( 4 )]
+position = Vector2( 800, 288 )
+Light_Variable = true
+
+[node name="stone_Light6" parent="Tiles" instance=ExtResource( 4 )]
+position = Vector2( 864, 288 )
+Light_Variable = true
+light_scale = 2
+max_energi = 1.0
+Time_Light = 0.5
+
+[node name="Path2D" type="Path2D" parent="Tiles"]
+position = Vector2( -17.4976, -1.12134 )
+scale = Vector2( 1.01567, 1 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Tiles/Path2D"]
+position = Vector2( 1229.9, -1247.53 )
+rotation = 0.00149335
+offset = 243.39
+script = ExtResource( 7 )
+timeSpeed = 3.0
+
+[node name="Plataforma_Queda5" parent="Tiles/Path2D/PathFollow2D" instance=ExtResource( 6 )]
+position = Vector2( 64, 1.00391 )
+rotation = 6.21659e-05
+Area_to_Vanishing = false
+Timer_Desaparece = 1.0
+Timer_Reaparece = 2.0
+
+[node name="Plataforma_Queda6" parent="Tiles" instance=ExtResource( 6 )]
+position = Vector2( 1312, -1056 )
+Timer_Desaparece = 1.0
+Timer_Reaparece = 2.0
+
+[node name="Plataforma_Queda4" parent="Tiles" instance=ExtResource( 6 )]
+position = Vector2( 1248, -864 )
+Timer_Desaparece = 1.0
+Timer_Reaparece = 2.0
+
+[node name="Plataforma_Queda3" parent="Tiles" instance=ExtResource( 6 )]
+position = Vector2( 1376, -672 )
+Timer_Desaparece = 1.0
+Timer_Reaparece = 2.0
+
+[node name="Plataforma_Queda2" parent="Tiles" instance=ExtResource( 6 )]
+position = Vector2( 1248, -480 )
+Timer_Desaparece = 1.0
+Timer_Reaparece = 2.0
+
+[node name="Plataforma_Queda" parent="Tiles" instance=ExtResource( 6 )]
+position = Vector2( 1376, -288 )
+Timer_Desaparece = 1.0
+Timer_Reaparece = 2.0
+
+[node name="stone_Light7" parent="Tiles" instance=ExtResource( 4 )]
+position = Vector2( 1120, -1249.03 )
+rotation = 1.5708
+
+[node name="stone_Light9" parent="Tiles" instance=ExtResource( 4 )]
+position = Vector2( 1120, -1184 )
+rotation = 1.5708
+
+[node name="stone_Light8" parent="Tiles" instance=ExtResource( 4 )]
+position = Vector2( 1376, -1248 )
+rotation = 4.71239
+
+[node name="stone_Light10" parent="Tiles" instance=ExtResource( 4 )]
+position = Vector2( 1376, -1184 )
+rotation = 4.71239
+
+[node name="Features" type="Node2D" parent="."]
+position = Vector2( 192, 1856 )
+
+[node name="corrente" parent="Features" instance=ExtResource( 5 )]
+position = Vector2( 704, -160 )
+Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+
+[node name="corrente5" parent="Features" instance=ExtResource( 5 )]
+position = Vector2( 112, 0 )
+shadow = true
+Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+
+[node name="corrente2" parent="Features" instance=ExtResource( 5 )]
+position = Vector2( 1296, 153.375 )
+Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+
+[node name="corrente6" parent="Features" instance=ExtResource( 5 )]
+position = Vector2( 1632, 39.1407 )
+Interruptor = NodePath("../interupitor")
+Light_Scale = 3.0
+Light_Strength = 2.0
+
+[node name="corrente3" parent="Features" instance=ExtResource( 5 )]
+position = Vector2( 1184, -416 )
+Lampada_on = true
+Light_Scale = 4.0
+Light_Strength = 2.0
+
+[node name="corrente4" parent="Features" instance=ExtResource( 5 )]
+position = Vector2( 1307.16, -991.777 )
+Lampada_on = true
+Light_Scale = 4.0
+Light_Strength = 2.0
+
+[node name="corrente7" parent="Features" instance=ExtResource( 5 )]
+position = Vector2( 1696, -1670.62 )
+Interruptor = NodePath("../interupitor")
+Light_Scale = 4.0
+Light_Strength = 2.0
+
+[node name="corrente9" parent="Features" instance=ExtResource( 5 )]
+position = Vector2( 2144, -32 )
+Interruptor = NodePath("../interupitor")
+shadow = true
+Light_Scale = 4.0
+Light_Strength = 2.0
+
+[node name="corrente8" parent="Features" instance=ExtResource( 5 )]
+position = Vector2( 2048, -1631.37 )
+Interruptor = NodePath("../interupitor")
+Light_Strength = 2.0
+
+[node name="corrente10" parent="Features" instance=ExtResource( 5 )]
+position = Vector2( 2616.11, -1574.63 )
+Interruptor = NodePath("../interupitor")
+Light_Strength = 2.0
+
+[node name="Smook" parent="Features" instance=ExtResource( 8 )]
+position = Vector2( 1632, 93.1943 )
+Interruptor = NodePath("../interupitor")
+
+[node name="Smook2" parent="Features" instance=ExtResource( 8 )]
+position = Vector2( 1696, -1632 )
+Interruptor = NodePath("../interupitor")
+
+[node name="Door_To_next_Level" parent="Features" instance=ExtResource( 9 )]
+position = Vector2( -80, 208.786 )
+Next_Level = ExtResource( 14 )
+
+[node name="interupitor" parent="Features" instance=ExtResource( 10 )]
+position = Vector2( 1440, -1504 )
+
+[node name="Icons_Eyes_Close" parent="Features" instance=ExtResource( 11 )]
+position = Vector2( 2144, -1504 )
+
+[node name="Icons_Eyes_Close2" parent="Features" instance=ExtResource( 11 )]
+position = Vector2( 2112, 209.731 )
+
+[node name="Icons_Eyes_Close3" parent="Features" instance=ExtResource( 11 )]
+position = Vector2( 1631.16, 209.731 )
+
+[node name="In_Tangible_Wall" parent="Features" instance=ExtResource( 13 )]
+position = Vector2( 2336, -1568 )
+player = NodePath("../../Seres/player")
+
+[node name="In_Tangible_Wall3" parent="Features" instance=ExtResource( 13 )]
+position = Vector2( 2016, 160 )
+player = NodePath("../../Seres/player")
+
+[node name="In_Tangible_Wall2" parent="Features" instance=ExtResource( 13 )]
+position = Vector2( 32, 160 )
+player = NodePath("../../Seres/player")
+
+[node name="Seres" type="Node2D" parent="."]
+
+[node name="player" parent="Seres" instance=ExtResource( 2 )]
+position = Vector2( 272.354, 2065.73 )
+
+[node name="Camera" parent="." instance=ExtResource( 3 )]
+Element_To_Follow = NodePath("../Seres/player")
+Limit_Left = 0
+Limit_Top = 0
+Limit_Right = 2880
+Limit_Botton = 2240
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.298039, 0.298039, 0.298039, 1 )

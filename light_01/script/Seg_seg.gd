@@ -1,16 +1,16 @@
 extends KinematicBody2D
 
-export(int) var GRAVITY=25
-export(int) var SPEED=14000
-export(String, "left", "right", "idle") var direction
+export(int) var GRAVITY:int=25
+export(int) var SPEED:int=14000
+export(String, "left", "right", "idle") var direction:String
 
-onready var coli=$colision_parede
-onready var animation=$anima
-onready var timer=$end_idle
+onready var coli:CollisionShape2D=$colision_parede
+onready var animation:AnimationPlayer=$anima
+onready var timer:Timer=$end_idle
 
 var vector_move=Vector2.ZERO
-var dir_Before="right"
-var boost=true
+var dir_Before:String="right"
+var boost:bool=true
 
 func _ready():
 #	set Particles like = true
