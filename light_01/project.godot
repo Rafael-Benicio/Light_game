@@ -117,10 +117,6 @@ Ok={
 
 locale_filter=[ 0, [  ] ]
 
-[memory]
-
-limits/message_queue/max_size_kb=5096
-
 [physics]
 
 2d/physics_engine="GodotPhysics"

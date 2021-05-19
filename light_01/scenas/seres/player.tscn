@@ -460,6 +460,10 @@ position = Vector2( 0, -1 )
 position = Vector2( 0.000325203, 25 )
 shape = SubResource( 2 )
 
+[node name="cab" type="CollisionShape2D" parent="Hurt"]
+position = Vector2( 0.000325203, 1.52111 )
+shape = SubResource( 2 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Death = SubResource( 3 )
 anims/Next_level = SubResource( 4 )

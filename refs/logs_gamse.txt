@@ -1,0 +1,9 @@
+Player
+Level_1
+Stone_light
+Door_Next_level
+Level_2
+Parede de Fumaça
+interruptor
+Corrente com lampada
+Plataforma que desaparece

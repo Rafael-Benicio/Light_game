@@ -10,6 +10,8 @@ export(bool) var Door_invertion:bool=false
 onready var animation:AnimatedSprite=$AnimatedSprite
 onready var canvas:ColorRect=$CanvasLayer/ColorRect
 
+signal nextLevel
+
 func _ready():
 #	assert(Next_Level,"Assinale um nivel")
 	animation.animation="open"
@@ -27,8 +29,9 @@ func _ready():
 func _physics_process(delta):
 	canvas.color.a+=1*delta/Time
 	if canvas.color.a>1:
-		var _ok:bool=get_tree().change_scene_to(Next_Level)
-		
+#		var _ok:bool=get_tree().change_scene_to(Next_Level)
+		emit_signal("nextLevel")
+				
 #Habilita o fade para ir pra proxima cena
 func to_next_level(body):
 	if body.is_in_group("player"):

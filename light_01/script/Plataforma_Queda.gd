@@ -11,7 +11,6 @@ onready var sprite1:Sprite=$Sprite
 onready var sprite2:Sprite=$Sprite2
 onready var timer:Timer=$Timer
 onready var timer2:Timer=$Timer2
-onready var timer3:Timer=$Timer3
 onready var bodyColi:CollisionShape2D=$CollisionShape2D
 onready var bodyArea:CollisionShape2D=$Area/CollisionShape2D
 

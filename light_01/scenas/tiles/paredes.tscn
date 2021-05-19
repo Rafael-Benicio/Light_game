@@ -50,5 +50,6 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [node name="Paredes" type="TileMap" groups=[
 "wall",
 ]]
+z_index = -1
 tile_set = SubResource( 3 )
 format = 1

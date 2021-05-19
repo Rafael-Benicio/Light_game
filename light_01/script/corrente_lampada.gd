@@ -6,7 +6,7 @@ export(bool) var shadow:bool=false
 export(bool) var Lampada_on:bool=false
 export(float) var Light_Scale:float=2
 export(float) var Light_Strength:float=1
-export(Color) var ColorLight=Color(0.992157,1,0.694118,1)
+export(Color) var ColorLight=Color(1,1,1,1)
 export(bool) var Interruptor_Invert:bool=false
 
 onready var lamp:Light2D=$lampada/Light2D

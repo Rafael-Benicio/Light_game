@@ -24,8 +24,10 @@ onready var coli:CollisionShape2D=$Cabeca
 #Node de animação
 onready var animation:AnimationPlayer=$AnimationPlayer
 #Itens do canvas
-onready var colorFade=$CanvasLayer/ColorRect
-onready var Icons_use=$CanvasLayer/TextureRect
+onready var colorFade:ColorRect=$CanvasLayer/ColorRect
+onready var Icons_use:TextureRect=$CanvasLayer/TextureRect
+#Hurt box
+onready var coliCa:CollisionShape2D=$Hurt/cab
 
 #A Variavel canMove Deifne se ocorrera a moviemntação de player por input e aplicação de gravidade
 var canMove:bool=true
@@ -104,13 +106,9 @@ func _physics_process(delta):
 		if Input.is_action_pressed("Ok") and useOK:
 			if habilit=="eyes_close":
 				emit_signal("Active_eyes")
-				Icons_use.texture=null
-				habilit="?"
 			if habilit=="body_boll":
 				emit_signal("Active_boll_Mode")
-				Boll_Mode(false)
-				Icons_use.texture=null
-				habilit="?"	
+				
 	#	Caso esteja no chão, Pula, anda pra esquerda ou direitra
 		if is_on_floor():
 #			Click para pulo
@@ -216,6 +214,7 @@ func Boll_Mode(tf:bool):
 	pOlhos.visible=tf
 	pBoll.visible=!tf
 	coli.disabled=!tf
+	coliCa.disabled=!tf
 	boll_Mode_Is_Active=!tf
 	
 	
