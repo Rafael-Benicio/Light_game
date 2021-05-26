@@ -1,7 +1,7 @@
 extends Node2D
 
 #Proxima cena pra qual o jogo vai
-export(PackedScene) var Next_Level
+#export(PackedScene) var Next_Level
 #O tempo para a tela escurecerl
 export(int,0,10) var Time:int=2
 #Se o sprite da porta vaoi ou não ser invertido
@@ -31,6 +31,7 @@ func _physics_process(delta):
 	if canvas.color.a>1:
 #		var _ok:bool=get_tree().change_scene_to(Next_Level)
 		emit_signal("nextLevel")
+		get_parent().get_parent().free()
 				
 #Habilita o fade para ir pra proxima cena
 func to_next_level(body):

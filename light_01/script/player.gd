@@ -45,6 +45,7 @@ var boll_Mode_Is_Active:bool=false
 signal go_To_Init
 signal Active_eyes
 signal Active_boll_Mode
+signal Death_Player
 
 
 func _ready():
@@ -174,6 +175,7 @@ func _physics_process(delta):
 func Death_Player():
 	canMove=false
 	animation.play("Death")
+	emit_signal("Death_Player")
 	var re=reborn.instance()
 	get_parent().add_child(re)
 	re.global_position=global_position

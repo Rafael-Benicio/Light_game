@@ -8,7 +8,7 @@ export(int) var Limit_Top=-1000000
 export(int) var Limit_Right=1000000
 export(int) var Limit_Botton=1000000
 #quantidade de smoot que via ser aplicado na camera
-export(int) var Smooth=0
+export(int) var Smooth=5
 #Pega o nodee Tween
 onready var Tween_node:Tween=$Tween
 #Pega o node Camera2D

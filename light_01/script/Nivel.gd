@@ -6,7 +6,6 @@ export(NodePath) var features
 export(float) var timer_module=3
 #Cria timer
 onready var timer:Timer=Timer.new()
-onready var Door_next=$Features/Door_To_next_Level
 #Variavis para get
 var get_Player:KinematicBody2D
 var get_tiles:Node2D
@@ -28,7 +27,6 @@ func _ready():
 	var _x=get_Player.connect("Active_eyes",self,"change_modules_Eyes")
 	var _z=get_Player.connect("Active_boll_Mode",self,"change_modules_Boll")
 	var _y=timer.connect("timeout",self,"return_to_normal")
-	var _w=Door_next.connect("nextLevel",self,"return_to_normal")
 #	definindo os "_physics_process(delta)" como false
 	set_physics_process(false)
 
