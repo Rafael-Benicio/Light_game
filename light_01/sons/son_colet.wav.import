@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/son_colet.wav-c8fbad524ae11154a04eb49e50a8c59b.sample"
+
+[deps]
+
+source_file="res://sons/son_colet.wav"
+dest_files=[ "res://.import/son_colet.wav-c8fbad524ae11154a04eb49e50a8c59b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

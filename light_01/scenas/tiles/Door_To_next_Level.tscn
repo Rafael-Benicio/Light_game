@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://script/Door_To_next_Level.gd" type="Script" id=1]
 [ext_resource path="res://imgesFonts/13_door.png" type="Texture" id=2]
+[ext_resource path="res://sons/son_porta_open.wav" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -92,6 +93,9 @@ color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="Entrou" to="." method="to_next_level"]
 [connection signal="body_entered" from="open_close" to="." method="_on_open_close_body_entered"]

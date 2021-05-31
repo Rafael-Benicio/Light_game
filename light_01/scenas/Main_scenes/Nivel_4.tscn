@@ -246,6 +246,7 @@ position = Vector2( 2512, -376.746 )
 position = Vector2( 272.354, 2065.73 )
 
 [node name="Camera" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2144, 254.251 )
 Element_To_Follow = NodePath("../Seres/player")
 Limit_Left = 0
 Limit_Top = 0

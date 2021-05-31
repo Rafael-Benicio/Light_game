@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://script/interupitor.gd" type="Script" id=1]
 [ext_resource path="res://imgesFonts/interrupitor.png" type="Texture" id=2]
 [ext_resource path="res://imgesFonts/light.png" type="Texture" id=3]
+[ext_resource path="res://sons/son_on_interruptor.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 12.3333
@@ -26,6 +27,9 @@ position = Vector2( -0.333333, 0 )
 scale = Vector2( 1.03333, 1 )
 texture = ExtResource( 3 )
 texture_scale = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="body_entered" from="." to="." method="_on_interupitor_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_interupitor_body_exited"]

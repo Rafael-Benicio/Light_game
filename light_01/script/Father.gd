@@ -1,11 +1,13 @@
 extends Node
 
 var nivel_1:Node2D=preload("res://scenas/Main_scenes/Nivel_1.tscn").instance()
+var nivel_1_1:Node2D=preload("res://scenas/Main_scenes/Nivel_1_1.tscn").instance()
 var nivel_1_2:Node2D=preload("res://scenas/Main_scenes/Nivel_1_2.tscn").instance()
-var nivel_1_3:Node2D=preload("res://scenas/Main_scenes/Nivel_1_3.tscn").instance()
 var nivel_2:Node2D=preload("res://scenas/Main_scenes/Nivel_2.tscn").instance()
 var nivel_2_1:Node2D=preload("res://scenas/Main_scenes/Nivel_2_1.tscn").instance()
+var nivel_2_2:Node2D=preload("res://scenas/Main_scenes/Nivel_2_2.tscn").instance()
 var nivel_3:Node2D=preload("res://scenas/Main_scenes/Nivel_3.tscn").instance()
+var nivel_3_1:Node2D=preload("res://scenas/Main_scenes/Nivel_3_1.tscn").instance()
 var nivel_4:Node2D=preload("res://scenas/Main_scenes/Nivel_4.tscn").instance()
 var nivel_5:Node2D=preload("res://scenas/Main_scenes/Nivel_5.tscn").instance()
 
@@ -14,19 +16,25 @@ export(int) var level:int=0
 onready var icon_T1:TextureRect=$CanvasLayer/TextureRect
 onready var icon_T2:TextureRect=$CanvasLayer/TextureRect2
 onready var icon_T3:TextureRect=$CanvasLayer/TextureRect3
+onready var mus_1:AudioStreamPlayer=$Musica/Music_1
+onready var mus_2:AudioStreamPlayer=$Musica/Music_2
 
 var nivel:Array
 var level_controler:int
 
 func _ready():
+#	inicia musicas
+	mus_1.play()
 #	Instancias os niveis
 	nivel=[
 		nivel_1,
+		nivel_1_1,
 		nivel_1_2,
-		nivel_1_3,
 		nivel_2,
 		nivel_2_1,
+		nivel_2_2,
 		nivel_3,
+		nivel_3_1,
 		nivel_4,
 		nivel_5]
 		
@@ -69,3 +77,7 @@ func Icon_ImT2():
 	icon_T2.modulate="#00ff00"
 func Icon_ImT3():
 	icon_T3.modulate="#00ff00"
+
+
+func _on_Music_1_finished():
+	mus_2.play()

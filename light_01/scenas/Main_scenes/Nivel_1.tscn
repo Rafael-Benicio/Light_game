@@ -100,6 +100,10 @@ Lampada_on = true
 Light_Scale = 3.0
 Light_Strength = 2.0
 
+[node name="corrente4" parent="Features/Light" instance=ExtResource( 9 )]
+position = Vector2( 482.329, -12.0766 )
+Lampada_on = true
+
 [node name="Seres" type="Node2D" parent="."]
 
 [node name="player" parent="Seres" instance=ExtResource( 1 )]
@@ -113,6 +117,6 @@ Limit_Right = 2048
 Limit_Botton = 1152
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.678431, 0.678431, 0.678431, 1 )
+color = Color( 0.278431, 0.278431, 0.278431, 1 )
 
 [editable path="Features/Icon_colet"]

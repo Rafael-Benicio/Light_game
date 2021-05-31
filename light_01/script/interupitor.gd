@@ -2,7 +2,8 @@ extends Area2D
 
 export(bool) var emiter:bool=false
 
-onready var light=$Light2D
+onready var light:Light2D=$Light2D
+onready var son_on:AudioStreamPlayer=$AudioStreamPlayer
 
 var can:bool=false
 
@@ -14,6 +15,7 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("Ok") and can:
+		son_on.play()
 		if emiter==false:
 			emiter=true
 			light.enabled=false

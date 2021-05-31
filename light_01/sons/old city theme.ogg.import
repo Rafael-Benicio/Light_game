@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/old city theme.ogg-09c734a0d59c110af21b1ec927186727.oggstr"
+
+[deps]
+
+source_file="res://sons/old city theme.ogg"
+dest_files=[ "res://.import/old city theme.ogg-09c734a0d59c110af21b1ec927186727.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

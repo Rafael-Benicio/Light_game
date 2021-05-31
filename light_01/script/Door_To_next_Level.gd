@@ -9,6 +9,7 @@ export(bool) var Door_invertion:bool=false
 #Carrega childs
 onready var animation:AnimatedSprite=$AnimatedSprite
 onready var canvas:ColorRect=$CanvasLayer/ColorRect
+onready var son_open:AudioStreamPlayer=$AudioStreamPlayer
 
 signal nextLevel
 
@@ -43,6 +44,7 @@ func to_next_level(body):
 #A porta abre caso o player se aproxime
 func _on_open_close_body_entered(body):
 	if body.is_in_group("player"):
+		son_open.play()
 		animation.animation="open"
 		animation.playing=true
 

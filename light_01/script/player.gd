@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 #Pariculas Emitidas no spawn
 var reborn=preload("res://scenas/Features/Reborn.tscn")
-var closeEyes=load("res://imgesFonts/icon_eyes.png")
-var boll=load("res://imgesFonts/icon_boll.png")
+var closeEyes=load("res://imgesFonts/eye_icon.png")
+var boll=load("res://imgesFonts/boll_icon.png")
 
 #Gravidade
 export(int) var GRAVITY=25
@@ -28,7 +28,9 @@ onready var colorFade:ColorRect=$CanvasLayer/ColorRect
 onready var Icons_use:TextureRect=$CanvasLayer/TextureRect
 #Hurt box
 onready var coliCa:CollisionShape2D=$Hurt/cab
-
+#Sons
+onready var jump_sound:AudioStreamPlayer=$Jump_sound
+onready var death_sound:AudioStreamPlayer=$death_sound
 #A Variavel canMove Deifne se ocorrera a moviemntação de player por input e aplicação de gravidade
 var canMove:bool=true
 #Armazena a posição em que o player inicia
@@ -114,6 +116,7 @@ func _physics_process(delta):
 		if is_on_floor():
 #			Click para pulo
 			if Input.is_action_pressed("Up"):
+				jump_sound.play()
 				input_vector.y-=HEIGHT_JUMP
 
 #			Aplica animação de 'walk' ou 'idle' 
@@ -180,6 +183,7 @@ func Death_Player():
 	get_parent().add_child(re)
 	re.global_position=global_position
 	re.emitting=true
+	death_sound.play()
 	visible=false
 
 func to_init_position():
