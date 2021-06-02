@@ -1,5 +1,9 @@
 extends Area2D
 
+var colet_green=preload("res://sons/son_colet.wav")
+var colet_blue=preload("res://sons/son_colet_2.wav")
+var colet_red=preload("res://sons/son_colet_3.wav")
+
 export(String, "Eyes_Close", "Boll", "Coletavel") var Habilit:String="Eyes_Close"
 
 onready var sp:AnimatedSprite=$AnimatedSprite
@@ -13,6 +17,8 @@ signal get_colet
 
 func _ready():
 	if Habilit=="Eyes_Close":
+		son_colet.stream=colet_blue
+		son_colet.volume_db=-10
 		sp.animation="eyes"
 		sp.modulate="#0000ff"
 		lamp.color="#00002c"
@@ -20,6 +26,9 @@ func _ready():
 		lamp.visible=true
 		lamp.enabled=true
 	elif Habilit=="Boll":
+		son_colet.stream=colet_red
+		son_colet.volume_db=-10
+		son_colet.pitch_scale=1.5
 		sp.animation="boll"
 		sp.modulate="#ff0000"
 		lamp.color="#2c0000"
@@ -27,6 +36,9 @@ func _ready():
 		lamp.visible=true
 		lamp.enabled=true
 	elif Habilit=="Coletavel":
+		son_colet.stream=colet_green
+		son_colet.volume_db=-15
+		son_colet.pitch_scale=0.8
 		sp.animation="colet"
 		sp.modulate="#00ff00"
 		lamp.color="#002c00"

@@ -31,6 +31,7 @@ onready var coliCa:CollisionShape2D=$Hurt/cab
 #Sons
 onready var jump_sound:AudioStreamPlayer=$Jump_sound
 onready var death_sound:AudioStreamPlayer=$death_sound
+onready var become_sound:AudioStreamPlayer=$become_sound
 #A Variavel canMove Deifne se ocorrera a moviemntação de player por input e aplicação de gravidade
 var canMove:bool=true
 #Armazena a posição em que o player inicia
@@ -95,6 +96,9 @@ func _physics_process(delta):
 	else:
 		input_vector.x=0
 
+	if Input.is_action_just_pressed("Death_b"):
+		Death_Player()
+
 #	Aplica animações e a permição para saltar
 	if canMove:
 	#	Aplica gravidade
@@ -108,8 +112,10 @@ func _physics_process(delta):
 #		Usar Habilidades caso o 'useOk' não esteja em false 
 		if Input.is_action_pressed("Ok") and useOK:
 			if habilit=="eyes_close":
+				become_sound.play()
 				emit_signal("Active_eyes")
 			if habilit=="body_boll":
+				become_sound.play()
 				emit_signal("Active_boll_Mode")
 				
 	#	Caso esteja no chão, Pula, anda pra esquerda ou direitra

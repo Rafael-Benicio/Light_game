@@ -9,7 +9,7 @@ export(bool) var Door_invertion:bool=false
 #Carrega childs
 onready var animation:AnimatedSprite=$AnimatedSprite
 onready var canvas:ColorRect=$CanvasLayer/ColorRect
-onready var son_open:AudioStreamPlayer=$AudioStreamPlayer
+onready var son_open:AudioStreamPlayer2D=$AudioStreamPlayer
 
 signal nextLevel
 

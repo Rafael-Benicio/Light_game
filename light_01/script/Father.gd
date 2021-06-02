@@ -8,6 +8,7 @@ var nivel_2_1:Node2D=preload("res://scenas/Main_scenes/Nivel_2_1.tscn").instance
 var nivel_2_2:Node2D=preload("res://scenas/Main_scenes/Nivel_2_2.tscn").instance()
 var nivel_3:Node2D=preload("res://scenas/Main_scenes/Nivel_3.tscn").instance()
 var nivel_3_1:Node2D=preload("res://scenas/Main_scenes/Nivel_3_1.tscn").instance()
+var nivel_3_2:Node2D=preload("res://scenas/Main_scenes/Nivel_3_2.tscn").instance()
 var nivel_4:Node2D=preload("res://scenas/Main_scenes/Nivel_4.tscn").instance()
 var nivel_5:Node2D=preload("res://scenas/Main_scenes/Nivel_5.tscn").instance()
 
@@ -35,6 +36,7 @@ func _ready():
 		nivel_2_2,
 		nivel_3,
 		nivel_3_1,
+		nivel_3_2,
 		nivel_4,
 		nivel_5]
 		
@@ -65,6 +67,10 @@ func change_level():
 		nivel[level_controler].get_node("Seres/player").connect("Death_Player",self,"Death_And_Restart")
 		
 		level_controler+=1
+		
+		if level_controler==3:
+			mus_1.playing=false
+			mus_2.play()
 
 func Death_And_Restart():
 	icon_T1.modulate="#fff"
@@ -78,6 +84,3 @@ func Icon_ImT2():
 func Icon_ImT3():
 	icon_T3.modulate="#00ff00"
 
-
-func _on_Music_1_finished():
-	mus_2.play()

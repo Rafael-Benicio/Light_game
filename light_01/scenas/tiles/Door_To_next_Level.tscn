@@ -94,8 +94,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+volume_db = -10.0
 
 [connection signal="body_entered" from="Entrou" to="." method="to_next_level"]
 [connection signal="body_entered" from="open_close" to="." method="_on_open_close_body_entered"]
