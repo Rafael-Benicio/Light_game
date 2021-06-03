@@ -9,8 +9,8 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.11577, 8.04188 )
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 4.09277
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 3.89404, 4.04145 )
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 6.25075

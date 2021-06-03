@@ -7,7 +7,6 @@
 
 [node name="Father" type="Node"]
 script = ExtResource( 2 )
-level = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

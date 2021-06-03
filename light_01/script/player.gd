@@ -11,6 +11,8 @@ export(int) var GRAVITY=25
 export(int) var SPEED=10000
 #Altura do pulo
 export(int) var HEIGHT_JUMP=600
+#last floor
+export(int) var LIMIT_BOTTOM:int=0
 
 #Sprites do player
 onready var pHead:Sprite=$player_head
@@ -41,7 +43,9 @@ var input_vector:Vector2=Vector2.ZERO
 #Sinal para camera ir para ponto 'ini_position'
 var useOK:bool=true
 var Eyes_close_open:bool=true
-
+#Death queda
+var Air_time:int=0
+#habilits
 var habilit:String="?"
 var boll_Mode_Is_Active:bool=false
 
@@ -98,7 +102,14 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("Death_b"):
 		Death_Player()
-
+		
+	if is_on_floor() and Air_time*delta>2.8:
+		Death_Player()
+	elif is_on_floor():
+		Air_time=0
+	
+	Last_line_floor()
+		
 #	Aplica animações e a permição para saltar
 	if canMove:
 	#	Aplica gravidade
@@ -142,8 +153,11 @@ func _physics_process(delta):
 					pOlhos.frame=3
 				else:	
 					pOlhos.frame=5
+					
 	#	Animações de pulo e queda
 		else:
+			Air_time+=1
+#			print(Air_time)
 #			Aplica animação de olhar para cima e para baixo durante o pulo
 			if input_vector.y<0:
 				animation.play("jump_up")
@@ -183,6 +197,7 @@ func _physics_process(delta):
 #Inicia a animçãod e morte
 func Death_Player():
 	canMove=false
+	Air_time=0
 	animation.play("Death")
 	emit_signal("Death_Player")
 	var re=reborn.instance()
@@ -232,4 +247,8 @@ func Boll_Mode(tf:bool):
 	
 func hurt(body):
 	if body.is_in_group("wall"):
+		Death_Player()
+
+func Last_line_floor():
+	if LIMIT_BOTTOM!=0 and LIMIT_BOTTOM<global_position.y and canMove:
 		Death_Player()
