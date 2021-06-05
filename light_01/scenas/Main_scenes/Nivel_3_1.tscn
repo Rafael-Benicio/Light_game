@@ -219,46 +219,86 @@ Lampada_on = true
 [node name="corrente3" parent="Features/Luz" instance=ExtResource( 7 )]
 position = Vector2( 640, 1056 )
 Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
+
+[node name="corrente20" parent="Features/Luz" instance=ExtResource( 7 )]
+position = Vector2( 1552, -1856 )
+Lampada_on = true
+Light_Scale = 4.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente4" parent="Features/Luz" instance=ExtResource( 7 )]
 position = Vector2( 704, 864 )
 Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente5" parent="Features/Luz" instance=ExtResource( 7 )]
 position = Vector2( 768, 672 )
 Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente6" parent="Features/Luz" instance=ExtResource( 7 )]
 position = Vector2( 576, 2400 )
 Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente7" parent="Features/Luz" instance=ExtResource( 7 )]
 position = Vector2( 80, -288 )
 Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente8" parent="Features/Luz" instance=ExtResource( 7 )]
 position = Vector2( 80, -512 )
 Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente9" parent="Features/Luz" instance=ExtResource( 7 )]
 position = Vector2( 128, -704 )
 Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente10" parent="Features/Luz" instance=ExtResource( 7 )]
 position = Vector2( 256, -864 )
 Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente11" parent="Features/Luz" instance=ExtResource( 7 )]
 position = Vector2( 336, -992 )
 Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente12" parent="Features/Luz" instance=ExtResource( 7 )]
 position = Vector2( 1024, -992 )
 Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente13" parent="Features/Luz" instance=ExtResource( 7 )]
 position = Vector2( 1152, -1120 )
 Lampada_on = true
+Light_Scale = 3.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente14" parent="Features/Luz" instance=ExtResource( 7 )]
 position = Vector2( 2768, -1840 )
@@ -300,6 +340,12 @@ Interruptor = NodePath("../../Interruptor/interupitor")
 position = Vector2( 672, -1184 )
 Interruptor = NodePath("../../Interruptor/interupitor2")
 
+[node name="Smook3" parent="Features/Smook" instance=ExtResource( 10 )]
+position = Vector2( 2416, -1376 )
+Interruptor = NodePath("../../Interruptor/interupitor2")
+Pariculas_Emitindo = false
+Interruptor_Invert = true
+
 [node name="Interruptor" type="Node2D" parent="Features"]
 position = Vector2( 128, 0 )
 
@@ -327,7 +373,7 @@ Door_invertion = true
 [node name="Seres" type="Node2D" parent="."]
 
 [node name="player" parent="Seres" instance=ExtResource( 5 )]
-position = Vector2( 1280, 2288 )
+position = Vector2( 1248, 2384 )
 
 [node name="Camera" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2720, -1760 )

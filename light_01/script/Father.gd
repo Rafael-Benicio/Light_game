@@ -10,6 +10,7 @@ var nivel_3:Node2D=preload("res://scenas/Main_scenes/Nivel_3.tscn").instance()
 var nivel_3_1:Node2D=preload("res://scenas/Main_scenes/Nivel_3_1.tscn").instance()
 var nivel_3_2:Node2D=preload("res://scenas/Main_scenes/Nivel_3_2.tscn").instance()
 var nivel_4:Node2D=preload("res://scenas/Main_scenes/Nivel_4.tscn").instance()
+var nivel_4_1:Node2D=preload("res://scenas/Main_scenes/Nivel_4_1.tscn").instance()
 var nivel_5:Node2D=preload("res://scenas/Main_scenes/Nivel_5.tscn").instance()
 
 export(int) var level:int=0
@@ -38,6 +39,7 @@ func _ready():
 		nivel_3_1,
 		nivel_3_2,
 		nivel_4,
+		nivel_4_1,
 		nivel_5]
 		
 #	controla o nivel que vai ser instanciado 

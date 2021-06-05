@@ -197,14 +197,20 @@ position = Vector2( 0, -1 )
 [node name="corrente" parent="Features/Luz" instance=ExtResource( 8 )]
 position = Vector2( 1152, 535.557 )
 Lampada_on = true
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente2" parent="Features/Luz" instance=ExtResource( 8 )]
 position = Vector2( 1216, -165.625 )
 Lampada_on = true
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente3" parent="Features/Luz" instance=ExtResource( 8 )]
 position = Vector2( 1024, -613.625 )
 Lampada_on = true
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente4" parent="Features/Luz" instance=ExtResource( 8 )]
 position = Vector2( 816, -1566 )
@@ -212,9 +218,11 @@ Lampada_on = true
 Light_Scale = 3.0
 
 [node name="corrente9" parent="Features/Luz" instance=ExtResource( 8 )]
-position = Vector2( 561.062, -1393.01 )
+position = Vector2( 456.108, -1310 )
 Lampada_on = true
 Light_Scale = 3.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente5" parent="Features/Luz" instance=ExtResource( 8 )]
 position = Vector2( 240, 738 )

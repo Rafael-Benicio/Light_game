@@ -69,18 +69,21 @@ Interruptor = NodePath("../../Interrupitor/interupitor")
 shadow = true
 Light_Scale = 6.0
 Light_Strength = 2.0
+ColorLight = Color( 1, 1, 0.647059, 1 )
 
 [node name="corrente2" parent="Features/Corrente" instance=ExtResource( 11 )]
 position = Vector2( 1440, -288 )
 Lampada_on = true
 Light_Scale = 6.0
 Light_Strength = 2.0
+ColorLight = Color( 1, 1, 0.647059, 1 )
 
 [node name="corrente3" parent="Features/Corrente" instance=ExtResource( 11 )]
 position = Vector2( 1504, -976 )
 Lampada_on = true
 Light_Scale = 6.0
 Light_Strength = 2.0
+ColorLight = Color( 1, 1, 0.647059, 1 )
 
 [node name="corrente6" parent="Features/Corrente" instance=ExtResource( 11 )]
 position = Vector2( 2000, 416.389 )
@@ -103,6 +106,7 @@ Interruptor = NodePath("../../Interrupitor/interupitor2")
 Lampada_on = true
 Light_Scale = 4.0
 Light_Strength = 2.0
+ColorLight = Color( 1, 1, 0.647059, 1 )
 Interruptor_Invert = true
 
 [node name="corrente8" parent="Features/Corrente" instance=ExtResource( 11 )]

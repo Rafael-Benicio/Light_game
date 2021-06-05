@@ -165,11 +165,15 @@ Time_Light = 0.5
 position = Vector2( 1499.63, 1315.33 )
 Lampada_on = true
 Light_Scale = 4.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente6" parent="Features/Light" instance=ExtResource( 1 )]
 position = Vector2( 1303.36, 740.374 )
 Lampada_on = true
 Light_Scale = 4.0
+Light_Strength = 2.0
+ColorLight = Color( 0.988235, 0.627451, 1, 1 )
 
 [node name="corrente7" parent="Features/Light" instance=ExtResource( 1 )]
 position = Vector2( 79.9733, 101.594 )

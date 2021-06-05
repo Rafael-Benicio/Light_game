@@ -87,22 +87,26 @@ position = Vector2( 967.458, 482.161 )
 Lampada_on = true
 Light_Scale = 3.0
 Light_Strength = 2.0
+ColorLight = Color( 1, 1, 0.647059, 1 )
 
 [node name="corrente2" parent="Features/Light" instance=ExtResource( 9 )]
 position = Vector2( 1710.47, 38.493 )
 Lampada_on = true
 Light_Scale = 3.0
 Light_Strength = 2.0
+ColorLight = Color( 1, 1, 0.647059, 1 )
 
 [node name="corrente3" parent="Features/Light" instance=ExtResource( 9 )]
 position = Vector2( 1137.11, -92.6868 )
 Lampada_on = true
 Light_Scale = 3.0
 Light_Strength = 2.0
+ColorLight = Color( 1, 1, 0.647059, 1 )
 
 [node name="corrente4" parent="Features/Light" instance=ExtResource( 9 )]
 position = Vector2( 482.329, -12.0766 )
 Lampada_on = true
+ColorLight = Color( 1, 1, 0.647059, 1 )
 
 [node name="Seres" type="Node2D" parent="."]
 
