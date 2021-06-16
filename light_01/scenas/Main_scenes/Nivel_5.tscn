@@ -61,6 +61,9 @@ position = Vector2( 800, 160 )
 
 [node name="Features" type="Node2D" parent="."]
 
+[node name="Door_To_next_Level" parent="Features" instance=ExtResource( 12 )]
+position = Vector2( 1960, -816 )
+
 [node name="Corrente" type="Node2D" parent="Features"]
 
 [node name="corrente" parent="Features/Corrente" instance=ExtResource( 11 )]
@@ -311,10 +314,6 @@ position = Vector2( 2656, 1168 )
 
 [node name="Meio_Bloco4" parent="Features/MeioBloco" instance=ExtResource( 13 )]
 position = Vector2( 1056, 1168 )
-
-[node name="Door_To_next_Level" parent="Features" instance=ExtResource( 12 )]
-position = Vector2( 1920, -816 )
-Door_invertion = true
 
 [node name="Icon_colet" parent="Features" instance=ExtResource( 14 )]
 

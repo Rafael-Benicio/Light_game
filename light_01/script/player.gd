@@ -8,7 +8,7 @@ var boll=load("res://imgesFonts/boll_icon.png")
 #Gravidade
 export(int) var GRAVITY=25
 #Velocidade
-export(int) var SPEED=10000
+export(int) var SPEED=167
 #Altura do pulo
 export(int) var HEIGHT_JUMP=600
 #last floor
@@ -53,7 +53,7 @@ signal go_To_Init
 signal Active_eyes
 signal Active_boll_Mode
 signal Death_Player
-
+signal mostra_menu
 
 func _ready():
 #	init
@@ -81,6 +81,10 @@ func _ready():
 	pBoll.visible=false
 	
 func _physics_process(delta):
+	if Input.is_action_just_pressed("Start"):
+		emit_signal("mostra_menu")
+		print('ok')
+#	print(delta)
 	input_vector.x=0
 #	movimentação por input
 	if Input.is_action_pressed("Left") and canMove:
@@ -107,7 +111,7 @@ func _physics_process(delta):
 		Death_Player()
 	elif is_on_floor():
 		Air_time=0
-	
+		
 	Last_line_floor()
 		
 #	Aplica animações e a permição para saltar
@@ -118,8 +122,8 @@ func _physics_process(delta):
 		elif Input.is_action_pressed("Up"):
 			input_vector.y+=GRAVITY*0.5
 		else:
-			input_vector.y+=GRAVITY 
-			
+			input_vector.y+=GRAVITY
+		
 #		Usar Habilidades caso o 'useOk' não esteja em false 
 		if Input.is_action_pressed("Ok") and useOK:
 			if habilit=="eyes_close":
@@ -191,8 +195,8 @@ func _physics_process(delta):
 						pOlhos.frame=0
 					else:	
 						pOlhos.frame=4
-#	Aplica o movimento ao corpo kinematico
-	input_vector=move_and_slide(Vector2(input_vector.x * SPEED * delta,input_vector.y),Vector2.UP)
+	#	Aplica o movimento ao corpo kinematico
+		input_vector=move_and_slide(Vector2(input_vector.x * SPEED,input_vector.y),Vector2.UP)
 
 #Inicia a animçãod e morte
 func Death_Player():
